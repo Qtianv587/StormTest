@@ -29,7 +29,7 @@
             <url>http://clojars.org/repo</url>
         </repository>
         <repository>
-            <id>http://mvnrepository.com/</id>
+            <id>mvnrepository.com/</id>
             <url>http://mvnrepository.com/</url>
         </repository>
     </repositories>
@@ -44,7 +44,7 @@
             <groupId>org.apache.storm</groupId>
             <artifactId>storm-core</artifactId>
             <version>1.1.1</version>
-            <scope>provided</scope>
+            <!--<scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>org.apache.storm</groupId>
