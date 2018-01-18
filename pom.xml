@@ -34,17 +34,17 @@
         </repository>
     </repositories>
     <dependencies>
-        <!-- Storm Dependency -->
-        <!--<dependency>-->
-            <!--<groupId>storm</groupId>-->
-            <!--<artifactId>storm</artifactId>-->
-            <!--<version>0.6.0</version>-->
-        <!--</dependency>-->
+         <!--Storm Dependency -->
+        <dependency>
+            <groupId>storm</groupId>
+            <artifactId>storm</artifactId>
+            <version>0.6.0</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.storm</groupId>
             <artifactId>storm-core</artifactId>
             <version>1.1.1</version>
-            <!--<scope>provided</scope>-->
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.storm</groupId>

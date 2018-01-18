@@ -10,7 +10,6 @@ import bolts.ParseBolt;
 import storm.kafka.*;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by qitian on 2018/1/15.
