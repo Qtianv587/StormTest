@@ -26,8 +26,11 @@ public class KafkaTopology {
         String zkServer = map.get("zookeeper").toString();
         System.out.println("zkServer: " + zkServer);
         final BrokerHosts zkHosts = new ZkHosts(zkServer);
+        System.out.println("--------111111111----------");
         SpoutConfig kafkaConfig = new SpoutConfig(zkHosts, "test", "/test", "single-point-test");
+        System.out.println("--------22222222222----------");
         kafkaConfig.scheme = new SchemeAsMultiScheme(new StringScheme());
+        System.out.println("--------333333333333----------");
         TopologyBuilder builder = new TopologyBuilder();
         builder.setSpout("kafkaSpout", new KafkaSpout(kafkaConfig), SPOUT_PARALLELISM_HINT);
         builder.setBolt("parseBolt", new ParseBolt(), PARSE_BOLT_PARALLELISM_HINT).shuffleGrouping("kafkaSpout");
