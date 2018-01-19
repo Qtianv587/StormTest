@@ -24,10 +24,10 @@
     </build>
     <repositories>
         <!-- Repository where we can found the storm dependencies -->
-        <!--<repository>-->
-            <!--<id>clojars.org</id>-->
-            <!--<url>http://clojars.org/repo</url>-->
-        <!--</repository>-->
+        <repository>
+            <id>clojars.org</id>
+            <url>http://clojars.org/repo</url>
+        </repository>
         <repository>
             <id>mvnrepository.com</id>
             <url>http://mvnrepository.com/</url>
@@ -35,11 +35,11 @@
     </repositories>
     <dependencies>
          <!--Storm Dependency -->
-        <!--<dependency>-->
-            <!--<groupId>storm</groupId>-->
-            <!--<artifactId>storm</artifactId>-->
-            <!--<version>0.6.0</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>storm</groupId>
+            <artifactId>storm</artifactId>
+            <version>0.6.0</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.storm</groupId>
             <artifactId>storm-core</artifactId>
