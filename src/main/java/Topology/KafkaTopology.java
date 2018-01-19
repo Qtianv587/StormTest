@@ -49,6 +49,8 @@ public class KafkaTopology {
         config.setMaxSpoutPending(5000);
 //        LocalCluster cluster = new LocalCluster();
 //        cluster.submitTopology("single-point-test", config, stormTopology);
+        String jarPath = "/root/.m2/repository/org/apache/storm/storm-core/1.1.1/storm-core-1.1.1.jar";
+        System.setProperty("storm.jar", jarPath);
         StormSubmitter.submitTopology("single-point-test", config, stormTopology);
     }
 }
