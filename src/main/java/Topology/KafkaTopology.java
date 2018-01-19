@@ -28,12 +28,11 @@ public class KafkaTopology {
         final BrokerHosts zkHosts = new ZkHosts(zkServer);
         System.out.println("--------111111111----------");
         SpoutConfig kafkaConfig = new SpoutConfig(zkHosts, "test", "/test", "single-point-test");
-        System.out.println("--------22222222222----------");
         kafkaConfig.scheme = new SchemeAsMultiScheme((Scheme) new StringScheme());
-        System.out.println("--------333333333333----------");
         TopologyBuilder builder = new TopologyBuilder();
         builder.setSpout("kafkaSpout", new KafkaSpout(kafkaConfig), SPOUT_PARALLELISM_HINT);
-        builder.setBolt("parseBolt", (IBasicBolt) new ParseBolt(), PARSE_BOLT_PARALLELISM_HINT).shuffleGrouping("kafkaSpout");
+        builder.setBolt("parseBolt", new ParseBolt(), PARSE_BOLT_PARALLELISM_HINT).shuffleGrouping("kafkaSpout");
+        System.out.println("--------22222222222----------");
         return builder.createTopology();
     }
 
@@ -48,8 +47,8 @@ public class KafkaTopology {
         config.setNumAckers(NUM_ACKERS);
         config.setMessageTimeoutSecs(MSG_TIMEOUT);
         config.setMaxSpoutPending(5000);
-        LocalCluster cluster = new LocalCluster();
-        cluster.submitTopology("single-point-test", config, stormTopology);
+//        LocalCluster cluster = new LocalCluster();
+//        cluster.submitTopology("single-point-test", config, stormTopology);
         StormSubmitter.submitTopology("single-point-test", config, stormTopology);
     }
 }
