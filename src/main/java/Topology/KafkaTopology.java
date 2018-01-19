@@ -1,13 +1,14 @@
 package Topology;
 
-import backtype.storm.Config;
-import backtype.storm.LocalCluster;
-import backtype.storm.StormSubmitter;
-import backtype.storm.generated.StormTopology;
-import backtype.storm.topology.TopologyBuilder;
-import backtype.storm.spout.SchemeAsMultiScheme;
 import bolts.ParseBolt;
-import storm.kafka.*;
+import org.apache.storm.Config;
+import org.apache.storm.LocalCluster;
+import org.apache.storm.StormSubmitter;
+import org.apache.storm.generated.StormTopology;
+import org.apache.storm.kafka.*;
+import org.apache.storm.spout.*;
+import org.apache.storm.topology.IBasicBolt;
+import org.apache.storm.topology.TopologyBuilder;
 
 import java.util.HashMap;
 
@@ -28,11 +29,11 @@ public class KafkaTopology {
         System.out.println("--------111111111----------");
         SpoutConfig kafkaConfig = new SpoutConfig(zkHosts, "test", "/test", "single-point-test");
         System.out.println("--------22222222222----------");
-        kafkaConfig.scheme = new SchemeAsMultiScheme(new StringScheme());
+        kafkaConfig.scheme = new SchemeAsMultiScheme((Scheme) new StringScheme());
         System.out.println("--------333333333333----------");
         TopologyBuilder builder = new TopologyBuilder();
         builder.setSpout("kafkaSpout", new KafkaSpout(kafkaConfig), SPOUT_PARALLELISM_HINT);
-        builder.setBolt("parseBolt", new ParseBolt(), PARSE_BOLT_PARALLELISM_HINT).shuffleGrouping("kafkaSpout");
+        builder.setBolt("parseBolt", (IBasicBolt) new ParseBolt(), PARSE_BOLT_PARALLELISM_HINT).shuffleGrouping("kafkaSpout");
         return builder.createTopology();
     }
 

@@ -28,23 +28,23 @@
             <id>clojars.org</id>
             <url>http://clojars.org/repo</url>
         </repository>
-        <!--<repository>-->
-            <!--<id>mvnrepository.com</id>-->
-            <!--<url>http://mvnrepository.com/</url>-->
-        <!--</repository>-->
+        <repository>
+            <id>mvnrepository.com</id>
+            <url>http://mvnrepository.com/</url>
+        </repository>
     </repositories>
     <dependencies>
          <!--Storm Dependency -->
-        <dependency>
-            <groupId>storm</groupId>
-            <artifactId>storm</artifactId>
-            <version>0.6.0</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>storm</groupId>-->
+            <!--<artifactId>storm</artifactId>-->
+            <!--<version>0.6.0</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.apache.storm</groupId>
             <artifactId>storm-core</artifactId>
             <version>1.1.1</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.storm</groupId>

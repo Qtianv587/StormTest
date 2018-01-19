@@ -1,11 +1,11 @@
 package spouts;
 
-import backtype.storm.spout.SpoutOutputCollector;
-import backtype.storm.task.TopologyContext;
-import backtype.storm.topology.IRichSpout;
-import backtype.storm.topology.OutputFieldsDeclarer;
-import backtype.storm.tuple.Fields;
-import backtype.storm.tuple.Values;
+import org.apache.storm.spout.SpoutOutputCollector;
+import org.apache.storm.task.TopologyContext;
+import org.apache.storm.topology.IRichSpout;
+import org.apache.storm.topology.OutputFieldsDeclarer;
+import org.apache.storm.tuple.Fields;
+import org.apache.storm.tuple.Values;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -37,6 +37,16 @@ public class WordReader implements IRichSpout {
 
     @Override
     public void close() {
+
+    }
+
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public void deactivate() {
 
     }
 
@@ -84,11 +94,6 @@ public class WordReader implements IRichSpout {
         System.out.println("FAIL:" + msgId);
     }
 
-    @Override
-    public boolean isDistributed() {
-        return false;
-    }
-
     /**
      * 声明输入域"word"
      */
@@ -96,4 +101,10 @@ public class WordReader implements IRichSpout {
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
         declarer.declare(new Fields("line"));
     }
+
+    @Override
+    public Map<String, Object> getComponentConfiguration() {
+        return null;
+    }
+
 }
