@@ -24,12 +24,12 @@
     </build>
     <repositories>
         <!-- Repository where we can found the storm dependencies -->
+        <!--<repository>-->
+            <!--<id>clojars.org</id>-->
+            <!--<url>http://clojars.org/repo</url>-->
+        <!--</repository>-->
         <repository>
-            <id>clojars.org</id>
-            <url>http://clojars.org/repo</url>
-        </repository>
-        <repository>
-            <id>mvnrepository.com/</id>
+            <id>mvnrepository.com</id>
             <url>http://mvnrepository.com/</url>
         </repository>
     </repositories>

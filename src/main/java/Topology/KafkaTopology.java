@@ -21,8 +21,8 @@ public class KafkaTopology {
     public static int SPOUT_PARALLELISM_HINT = 1;
     public static int PARSE_BOLT_PARALLELISM_HINT = 1;
 
-    public StormTopology buildTopology(HashMap map) {
-        String zkServer = map.get("zookeeper").toString();
+    public StormTopology buildTopology(HashMap<String, String> map) {
+        String zkServer = map.get("zookeeper");
         System.out.println("zkServer: " + zkServer);
         final BrokerHosts zkHosts = new ZkHosts(zkServer);
         System.out.println("--------111111111----------");
