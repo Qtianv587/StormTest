@@ -12,9 +12,6 @@ import org.apache.storm.topology.TopologyBuilder;
 
 import java.util.HashMap;
 
-/**
- * Created by qitian on 2018/1/15.
- */
 public class KafkaTopology {
     public static int NUM_WORKERS = 1;
     public static int NUM_ACKERS = 1;
