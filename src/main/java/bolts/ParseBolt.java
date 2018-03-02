@@ -13,7 +13,9 @@ public class ParseBolt extends BaseBasicBolt {
     @Override
     public void execute(Tuple tuple, BasicOutputCollector basicOutputCollector) {
         String word = tuple.getString(0);
-        System.out.println("+++++++++++++word is: " + word);
+        if(word.contains("=====")) {
+            System.out.println(word);
+        }
     }
 
     @Override
